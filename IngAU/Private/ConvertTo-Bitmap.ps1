@@ -5,9 +5,6 @@ function ConvertTo-Bitmap {
         [String]
         $Content
     )
-    begin {
-        Add-type -AssemblyName "System.Drawing"
-    }
     process {
         $bytes = [Convert]::FromBase64String($Content)
         $memoryStream = New-Object System.IO.MemoryStream(,$bytes)

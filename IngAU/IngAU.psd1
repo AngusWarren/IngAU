@@ -12,7 +12,7 @@
 RootModule = 'IngAU.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.2'
+ModuleVersion = '1.0.3'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -51,7 +51,7 @@ Description = 'Connects to the API for ING Australia.'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-# RequiredModules = @()
+RequiredModules = @('Microsoft.PowerShell.Utility')
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
