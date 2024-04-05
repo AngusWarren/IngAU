@@ -55,5 +55,8 @@ function Invoke-IngApi {
                 Invoke-RestMethod @splat
             }
         }
+        if ($ctx.TokenExpiry -lt (Get-Date).AddSeconds(300)) {
+            Update-IngToken
+        }
     }
 }

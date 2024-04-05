@@ -4,6 +4,7 @@ class IngContext {
     [PSCustomObject] $Keypad
     [Security.Cryptography.RSACryptoServiceProvider] $Rsa
     [Security.SecureString] $AccessToken
+    [DateTime] $TokenExpiry
     [String] AccessTokenPlain() {
         return [PSCredential]::New("n/a", $this.AccessToken).GetNetworkCredential().Password
     }

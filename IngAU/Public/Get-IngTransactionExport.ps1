@@ -1,7 +1,8 @@
-function Get-IngTransactionHistory {
+function Get-IngTransactionExport {
     param (
         [Parameter(Mandatory)]
-        [Int64]
+        [ValidatePattern('^\d+$')]
+        [String]
         $AccountNumber,
 
         [DateTime]

@@ -46,6 +46,7 @@ function Connect-Ing {
             Write-Error "Error while requesting token: $( $resp.ErrorMessage )"
         }
         $ctx.AccessToken = ConvertTo-SecureString -AsPlainText -Force $resp.Token
+        $ctx.TokenExpiry = (Get-Date).AddSeconds($resp.expires_in)
         $Script:IngContext = $ctx
         if ($PassThru) {
             $ctx
