@@ -1,6 +1,6 @@
 function Get-IngTransactionExport {
     param (
-        [Parameter(Mandatory)]
+        [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ValidatePattern('^\d+$')]
         [String]
         $AccountNumber,
