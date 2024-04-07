@@ -16,7 +16,7 @@ function Connect-Ing {
         .EXAMPLE
             Connect-Ing -Credential $savedCredential
         .EXAMPLE
-            Connect-Ing -ClientNumber 1234567 -SecurePin $secureStringPin
+            Connect-Ing -ClientNumber 1234567 -PIN $secureStringPin
     #>
     [CmdletBinding(DefaultParameterSetName="Credential")]
     param (
@@ -29,6 +29,7 @@ function Connect-Ing {
         $ClientNumber,
 
         [Parameter(ParameterSetName="SeparateUserAndPassword")]
+        [Alias('SecurePin')]
         [SecureString]
         $PIN,
 

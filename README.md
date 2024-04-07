@@ -8,6 +8,8 @@ Basic wrapper for the API used by ING's web interface in Australia (https://www.
 
 ```powershell
 Connect-Ing -ClientNumber 12345
+ PIN: ******
+
 $accounts = Get-IngAccount
 $accounts | ft -auto Category,AccountName,AccountNumber
 
