@@ -1,4 +1,23 @@
 function Connect-Ing {
+    <#
+        .SYNOPSIS
+            Sets up the IngContext object which will save the connection details for other functions.
+        .DESCRIPTION
+            The connection context will be stored in the module's IngContext variable. This allows it to be
+            used by other functions in this module. It can be retrieved by the user with Get-IngContext.
+        .EXAMPLE
+            Connect-Ing
+
+            Prompts for ClientNumber and PIN
+        .EXAMPLE
+            Connect-Ing -ClientNumber 1234567
+
+            Prompts for the PIN
+        .EXAMPLE
+            Connect-Ing -Credential $savedCredential
+        .EXAMPLE
+            Connect-Ing -ClientNumber 1234567 -SecurePin $secureStringPin
+    #>
     [CmdletBinding(DefaultParameterSetName="Credential")]
     param (
         [Parameter(ParameterSetName="Credential")]
